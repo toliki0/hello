@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+ <head>
+   <meta charset="utf-8">
+   <style>
+   body{
+    background: #87ceeb;
+    font-family: Meiryo;
+   }
+   div {
+     background: #ffffff;
+     padding: 10px;
+     text-align: center;
+     border: 17px solid #00bfff;
+     margin: 42px 300px;
+    }
+ label {
+  /* すべてのラベルを同じサイズにして、きちんと揃える */
+  display: inline-block;
+  width: 90px;
+  text-align: right;
+}
+    
+ </style>
+ </head>
+ <body>
+     <div>
+     <h1>SendGrid</h1>
+     <h2>問い合わせフォーム</h2>
+     <p>以下を入力してください</p>
+    <form action="#" th:action="@{/hello}" th:object="${hello}" method="post">
+        <p>名前: <input type="text" th:field="*{name}"  
+                       placeholder="名前はここに記入してください" 
+                    　 size="35" wrap="hard" required/></p> 
+            
+        <p>Eメール: <input type="email" name="email" th:field="*{email}"
+                         size="35" 
+                         placeholder="メールアドレスはここに記入してください"
+                         required/></p>
+           
+       <p>メッセージ:<br>
+            <textarea rows="10" cols="43" id="message" th:field="*{message}" 
+                      placeholder="問い合わせ内容はここに記入してください" 
+                      wrap="hard" required></textarea></p>
+        <p><input type="submit" value="送信する" />
+            <input type="reset" value="リセット" />    
+        </p>
+    </form>
+    </div>
+ </body>
+</html>

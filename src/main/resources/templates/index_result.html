@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+ <head>
+   <meta charset="utf-8">
+   <title>Result</title>
+ </head>
+ <body>
+     <h1>SendGrid</h1>
+     <h2>お問合せありがとうございました</h2>
+    <p th:text="'name: ' + ${name}" />
+    <p th:text="'email: ' + No-reply-+${email}" />
+    <p th:text="'message: ' + ${message}" />
+    <a href="/">Submit another message</a>
+</body>
+</html>
