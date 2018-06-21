@@ -9,6 +9,7 @@ import com.sendgrid.Response;
 import com.sendgrid.SendGrid;
 import java.io.IOException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
@@ -33,11 +34,15 @@ public class HelloApplication {
         return "index";
         }
  
-        @Autowired
         private SendGrid sendGrid;
-         
+        
+        @Value("${sendgrid.apiKey}")
+        private String apiKey;
+             
         @PostMapping()
-        public String greetingSubmit(@ModelAttribute Hello hello,Model model){   
+        public String greetingSubmit(@ModelAttribute Hello hello,Model model){
+            System.out.println(apiKey);
+        sendGrid = new SendGrid(apiKey);
         Email from=new Email(hello.getemail());
         String subject = "お問合せありがとうございました";
         Email to = new Email(hello.getemail());
