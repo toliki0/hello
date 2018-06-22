@@ -3,13 +3,36 @@
  <head>
    <meta charset="utf-8">
    <title>Result</title>
+   <style>
+         body{
+    background: #87ceeb;
+    font-family: Meiryo;
+   }
+   div {
+      list-style-type:none;  /*黒い点を消す*/
+     /* フォームをページの中央に置く */
+     background: #ffffff;
+     text-align: center;
+  
+     margin: 42px 300px;
+     /* フォームの範囲がわかるようにする */
+     background: #ffffff; /*背景白にする*/
+  
+     padding: 5px;
+     border: 13px solid #00bfff;
+     border-radius: 2em;
+}
+   }
+       </style>
  </head>
  <body>
+     <div>
      <h1>SendGrid</h1>
      <h2>お問合せありがとうございました</h2>
     <p th:text="'name: ' + ${name}" />
     <p th:text="'email: ' + No-reply-+${email}" />
     <p th:text="'message: ' + ${message}" />
     <a href="/">Submit another message</a>
+     </div>
 </body>
 </html>

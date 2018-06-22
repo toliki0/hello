@@ -7,45 +7,150 @@
     background: #87ceeb;
     font-family: Meiryo;
    }
-   div {
-     background: #ffffff;
-     padding: 10px;
-     text-align: center;
-     border: 17px solid #00bfff;
-     margin: 42px 300px;
-    }
- label {
+ul {  list-style-type:none;  /*黒い点を消す*/
+  /* フォームをページの中央に置く */
+  background: #ffffff;
+  text-align: center;
+  
+  margin: 42px 300px;
+  /* フォームの範囲がわかるようにする */
+  background: #ffffff; /*背景白にする*/
+  
+  padding: 5px 0px 10px;
+  border: 13px solid #00bfff;
+  border-radius: 2em;
+}
+
+form div + div {
+  margin-top: 1em;
+}
+label {
   /* すべてのラベルを同じサイズにして、きちんと揃える */
   display: inline-block;
-  width: 90px;
+  width: 100px;
   text-align: right;
 }
-    
+
+/*入力border???和四角?弧radius*/
+input[type="text"]:focus,
+    texture:focus {
+    box-shadow: 0 0 11px #3498db;
+    border: 2px solid #3498db;
+    font-size: 20px;
+}
+input[type="email"]:focus,
+    texture:focus {
+    box-shadow: 0 0 11px #3498db;
+    border: 2px solid #3498db;
+    font-size: 20px;
+}
+textarea[type="msg"]:focus,
+    texture:focus {
+    box-shadow: 0 0 11px #3498db;
+    border: 2px solid #3498db;
+    font-size: 20px;
+}
+
+input[type="text"] {
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+    width: 300px;
+    font-size: 17px;
+       border-radius: 3px;
+    border: 1px solid #67c5ff;
+}
+
+input[type="text"]:focus {
+    width: 300px;
+}
+
+input[type="email"] {
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+    width: 300px;
+    font-size: 17px;
+       border-radius: 3px;
+    border: 1px solid #67c5ff;
+}
+input[type="email"]:focus {
+    width: 300px;
+}
+
+textarea[type="msg"] {
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+    width: 300px;
+    height:5em;
+    border-radius: 3px;
+    font-size: 17px;
+    vertical-align: top;
+    border: 1px solid #67c5ff;
+}
+textarea[type="msg"]:focus {
+    width: 350px;
+    height:9em;
+}
+
+
+
+.button {
+  /* ボタンを他のテキストフィールドと同じ場所に置く */
+  padding-left: 0px; /* label 要素と同じサイズ */
+}
+
+.button {
+  /* このマージンは、ラベルとテキストフィールドの間のスペースと
+     おおよそ同じスペースを表す */
+  margin-left: .5em;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.3em 1em;
+    text-decoration: none;
+    color: #67c5ff;
+    border: solid 2px #67c5ff;
+    border-radius: 3px;
+    transition: .3s;
+    margin-left: .5em;
+}
+.button:hover {
+    background: #67c5ff;
+    color: white;
+}
  </style>
  </head>
  <body>
-     <div>
+     
+ <ul>
      <h1>SendGrid</h1>
      <h2>問い合わせフォーム</h2>
-     <p>以下を入力してください</p>
-    <form action="#" th:action="@{/hello}" th:object="${hello}" method="post">
-        <p>名前: <input type="text" th:field="*{name}"  
-                       placeholder="名前はここに記入してください" 
-                    　 size="35" wrap="hard" required/></p> 
-            
-        <p>Eメール: <input type="email" name="email" th:field="*{email}"
-                         size="35" 
-                         placeholder="メールアドレスはここに記入してください"
-                         required/></p>
-           
-       <p>メッセージ:<br>
-            <textarea rows="10" cols="43" id="message" th:field="*{message}" 
-                      placeholder="問い合わせ内容はここに記入してください" 
-                      wrap="hard" required></textarea></p>
-        <p><input type="submit" value="送信する" />
-            <input type="reset" value="リセット" />    
-        </p>
-    </form>
-    </div>
- </body>
+     <h3>以下を入力してください</h3><br>
+             <form action="#" th:action="@{/hello}" th:object="${hello}" method="post">
+                <div>
+                 <label for="name">名前:</label>
+                 <input type="text" id="name" th:field="*{name}"  
+                       placeholder="名前を記入してください" 
+                    　 wrap="hard" required/>
+                </div>
+                <div>
+                <label for="email">Eメール:</label>
+                 <input type="email" id="email" name="email" th:field="*{email}"               
+                                 placeholder="メールアドレスを記入してください"/>
+                </div>
+                <div>
+                     <label for="msg">メッセージ:</label>
+                    <textarea type="msg" id="msg" th:field="*{message}" 
+                              placeholder="問い合わせ内容はここに記入してください" 
+                              wrap="hard" required/></textarea>
+                 </div>
+                 <div> 
+                 <a href="#" class="button" type="submit">送信する</a>
+                    <a href="#" class="button" type="reset">リセット</a>  
+            </div>    
+    </ul>
+  </body>
 </html>
