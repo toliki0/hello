@@ -142,8 +142,9 @@ input.button:hover {
                 </div>
                 <div>
                 <label for="email">Eメール:</label>
-                 <input type="email" id="email" name="email" th:field="*{email}"               
-                                 placeholder="メールアドレスを記入してください"　required="required"/>
+                 <input type="email" id="email" th:field="*{email}"               
+                                 placeholder="メールアドレスを記入してください"　
+                                 wrap="hard" required="required"/>
                 </div>
                 <div>
                      <label for="msg">メッセージ:</label>
