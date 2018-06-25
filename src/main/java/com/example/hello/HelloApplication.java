@@ -53,6 +53,7 @@ public class HelloApplication {
         model.addAttribute("email", hello.getemail());
         model.addAttribute("message", hello.getmessage());
         
+        
         Request request = new Request();
         Response ret = null;
         try {
