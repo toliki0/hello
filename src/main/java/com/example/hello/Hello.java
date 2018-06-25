@@ -13,6 +13,7 @@ public class Hello {
  private String name;
  private String email;
  private String message;
+ private int Tel;
  
     public String getname(){
         return name;
@@ -29,7 +30,14 @@ public class Hello {
     public String getmessage(){
         return message;
     }
-     public void setmessage(String message){
+    public void setmessage(String message){
         this.message=message;
+    }
+    
+    public int getTel(){
+        return Tel;
+    }
+    public void setnumber(int Tel){
+        this.Tel=Tel;
     }
 }

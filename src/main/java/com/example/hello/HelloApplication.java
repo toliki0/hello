@@ -52,7 +52,7 @@ public class HelloApplication {
         model.addAttribute("name", hello.getname()); 
         model.addAttribute("email", hello.getemail());
         model.addAttribute("message", hello.getmessage());
-        
+        model.addAttribute("Tel", hello.getTel());
         
         Request request = new Request();
         Response ret = null;
