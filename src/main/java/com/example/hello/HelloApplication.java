@@ -45,7 +45,7 @@ public class HelloApplication {
         Email from=new Email(hello.getemail(),"No-reply");
         String subject = "お問合せありがとうございました";
         Email to = new Email(hello.getemail());
-        Content content = new Content("text/plain", hello.getmessage());
+        Content content = new Content("text/html", hello.getmessage());
         Mail mail = new Mail(from, subject, to, content);
         mail.setTemplateId("f43e726f-ff03-4b39-a383-74b19946d02f");
         
