@@ -13,7 +13,7 @@ public class Hello {
  private String name;
  private String email;
  private String message;
- private int Tel;
+ private String tel;
  
     public String getname(){
         return name;
@@ -34,10 +34,11 @@ public class Hello {
         this.message=message;
     }
     
-    public int getTel(){
-        return Tel;
+    public String gettel(){
+        return tel; 
     }
-    public void setnumber(int Tel){
-        this.Tel=Tel;
+
+    public void settel(String tel){
+        this.tel=tel;
     }
 }

@@ -52,8 +52,8 @@ public class HelloApplication {
         model.addAttribute("name", hello.getname()); 
         model.addAttribute("email", hello.getemail());
         model.addAttribute("message", hello.getmessage());
-        model.addAttribute("Tel", hello.getTel());
-        
+        model.addAttribute("tel", hello.gettel());  
+          
         Request request = new Request();
         Response ret = null;
         try {

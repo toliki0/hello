@@ -54,12 +54,7 @@ textarea[type="msg"]:focus,
     border: 2px solid #3498db;
     font-size: 20px;
 }
-input[type="Tel"]:focus,
-    texture:focus {
-    box-shadow: 0 0 11px #3498db;
-    border: 2px solid #3498db;
-    font-size: 20px;
-}
+
 /*--------------------------------------*/
 input[type="text"] {
     -webkit-transition: all .3s;
@@ -104,18 +99,6 @@ textarea[type="msg"]:focus {
     height:9em;
 }
 
-input[type="Tel"] {
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
-    transition: all .3s;
-    width: 300px;
-    font-size: 17px;
-       border-radius: 3px;
-    border: 1px solid #67c5ff;
-}
-input[type="Tel"]:focus {
-    width: 300px;
-}
 /*------------------------------------------*/
 input.button {
   /* ボタンを他のテキストフィールドと同じ場所に置く */
@@ -166,14 +149,12 @@ input.button:hover {
                                  placeholder="メールアドレスを記入してください"　
                                  wrap="hard" required="required"</input><font color="red">※入力必須</font>
                 </div>
-                   <div>
-                <label for="Tel">電話番号:</label>
-                 <input type="Tel" id="nTel" th:field="*{Tel}"               
-                                 placeholder="電話番号を記入してください"
-                                 size="17"
-                                 </input><font color="white">※入力不必</font>
+                  <div>
+                  <label for="name2">電話番号:</label>
+                 <input type="text"  id="tel" th:field="*{tel}"         
+                                 placeholder="123-4567-8901"         
+                                  </input><font color="white">※入力不必</font>
                 </div>
-                 
                 <div>
                      <label for="msg">メッセージ:</label>
                     <textarea type="msg" id="msg" th:field="*{message}" 
