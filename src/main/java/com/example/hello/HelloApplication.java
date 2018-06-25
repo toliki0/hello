@@ -33,23 +33,23 @@ public class HelloApplication {
         model.addAttribute("hello", new Hello());
         return "index";
         }
- 
-        private SendGrid sendGrid;
         
+        private SendGrid sendGrid;
         @Value("${sendgrid.apiKey}")
         private String apiKey;
-             
+        
+      
         @PostMapping()
         public String greetingSubmit(@ModelAttribute Hello hello,Model model){
             System.out.println(apiKey);
         sendGrid = new SendGrid(apiKey);
-        Email from=new Email(hello.getemail());
+        Email from=new Email(hello.getemail(),"No-reply");
         String subject = "お問合せありがとうございました";
         Email to = new Email(hello.getemail());
-        Content content = new Content("text/html", hello.getmessage());
+        Content content = new Content("text/plain", hello.getmessage());
         Mail mail = new Mail(from, subject, to, content);
-        mail.setTemplateId("f43e726f-ff03-4b39-a383-74b19946d02f");
-     
+       /* mail.setTemplateId("f43e726f-ff03-4b39-a383-74b19946d02f");*/
+    
         
         model.addAttribute("name", hello.getname()); 
         model.addAttribute("email", hello.getemail());

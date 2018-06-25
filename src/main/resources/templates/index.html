@@ -96,18 +96,18 @@ textarea[type="msg"]:focus {
 
 
 
-.button {
+input.button {
   /* ボタンを他のテキストフィールドと同じ場所に置く */
   padding-left: 0px; /* label 要素と同じサイズ */
 }
 
-.button {
+input.button {
   /* このマージンは、ラベルとテキストフィールドの間のスペースと
      おおよそ同じスペースを表す */
   margin-left: .5em;
 }
 
-.button {
+input.button {
     display: inline-block;
     padding: 0.3em 1em;
     text-decoration: none;
@@ -116,11 +116,13 @@ textarea[type="msg"]:focus {
     border-radius: 3px;
     transition: .3s;
     margin-left: .5em;
+    background:#FFFFFF;
 }
-.button:hover {
+input.button:hover {
     background: #67c5ff;
-    color: white;
+    color: #FFFFFF;
 }
+
  </style>
  </head>
  <body>
@@ -148,9 +150,9 @@ textarea[type="msg"]:focus {
                               wrap="hard" required/></textarea>
                  </div>
                  <div> 
-                 <a href="#" class="button" type="submit">送信する</a>
-                    <a href="#" class="button" type="reset">リセット</a>  
-            </div>    
+                    <p><input class="button" type="submit" value="送信"/>
+                    <input class="button" type="reset"　value="リセット"/></p>  
+            </div>
     </ul>
   </body>
 </html>
