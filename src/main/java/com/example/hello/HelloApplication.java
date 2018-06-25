@@ -38,7 +38,6 @@ public class HelloApplication {
         @Value("${sendgrid.apiKey}")
         private String apiKey;
         
-      
         @PostMapping()
         public String greetingSubmit(@ModelAttribute Hello hello,Model model){
             System.out.println(apiKey);
@@ -49,7 +48,6 @@ public class HelloApplication {
         Content content = new Content("text/plain", hello.getmessage());
         Mail mail = new Mail(from, subject, to, content);
        /* mail.setTemplateId("f43e726f-ff03-4b39-a383-74b19946d02f");*/
-    
         
         model.addAttribute("name", hello.getname()); 
         model.addAttribute("email", hello.getemail());
